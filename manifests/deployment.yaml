@@ -1,0 +1,34 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: aws-dashboard
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: aws-dashboard
+
+  template:
+    metadata:
+      labels:
+        app: aws-dashboard
+
+    spec:
+      containers:
+        - name: aws-dashboard
+          image: YOUR_DOCKERHUB_USERNAME/aws-dashboard:latest
+
+          ports:
+            - containerPort: 80
+
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
