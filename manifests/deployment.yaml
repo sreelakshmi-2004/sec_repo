@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: aws-dashboard
-          image: YOUR_DOCKERHUB_USERNAME/aws-dashboard:latest
+          image: sreelakshmins2004/aws-dashboard:latest
 
           ports:
             - containerPort: 80
